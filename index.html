@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digicell Agency - Digital Marketing & Development Agency</title>
+    <meta name="description" content="We build brands, boost sales, and grow your digital presence. Full-service digital marketing and development agency in India.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --blue-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark: #0a0a0a;
+            --light: #ffffff;
+            --gray: #f8f9fa;
+            --text-dark: #1a1a1a;
+            --text-light: #6b7280;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-btn {
+            background: var(--primary-gradient);
+            color: white !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s;
+            -webkit-text-fill-color: white;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.1;
+            top: -200px;
+            right: -200px;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-content h1 span {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--text-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--text-dark);
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-dark);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            position: relative;
+        }
+
+        .hero-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
+        .hero-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Services Overview */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            opacity: 0;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gradient);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Detailed Services */
+        .detailed-services {
+            background: var(--gray);
+        }
+
+        .service-detail {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+        }
+
+        .service-detail:hover {
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-detail h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-detail ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-detail li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .service-detail li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .service-highlight {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        /* Why Choose Us */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .why-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            display: flex;
+            gap: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .why-content h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .why-content p {
+            color: var(--text-light);
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .process-step h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .process-step p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Portfolio */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .portfolio-image {
+            height: 250px;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+        }
+
+        .portfolio-content h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-content p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .portfolio-result {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        /* Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            background: var(--primary-gradient);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.3);
+        }
+
+        .pricing-card.featured * {
+            color: white;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-10px) scale(1.07);
+        }
+
+        .pricing-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .pricing-card li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .pricing-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .pricing-btn {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 50px;
+            border: 2px solid var(--text-dark);
+            background: transparent;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .pricing-card.featured .pricing-btn {
+            background: white;
+            color: #667eea;
+            border: none;
+        }
+
+        .pricing-btn:hover {
+            background: var(--text-dark);
+            color: white;
+        }
+
+        .pricing-card.featured .pricing-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--gray);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 3rem;
+            color: #667eea;
+            opacity: 0.2;
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .author-info h5 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #667eea;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s;
+            color: var(--text-light);
+            padding-top: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-gradient);
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+            border-radius: 30px;
+            margin: 4rem 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Contact Form */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--gray);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--primary-gradient);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                transition: left 0.3s;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-visual {
+                grid-template-columns: 1fr;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            section {
+                padding: 4rem 1rem;
+            }
+
+            .services-grid,
+            .portfolio-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Digicell Agency</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="cta-btn">Get Free Consultation</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content fade-in">
+                <h1>We help you <span>grow faster</span> in the digital world.</h1>
+                <p>Digicell Agency builds high-converting websites, mobile apps, and marketing campaigns that bring you real customers — not just clicks.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Book a Free Strategy Call</a>
+                    <a href="#services" class="btn-secondary">View Our Services</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <h3>🌐 Website</h3>
+                    <p>Fast, responsive, SEO-ready websites that convert visitors into customers</p>
+                </div>
+                <div class="hero-card">
+                    <h3>📱 App</h3>
+                    <p>Custom mobile apps that your customers love to use</p>
+                </div>
+                <div class="hero-card">
+                    <h3>📊 Social Media</h3>
+                    <p>Engaging content that grows your brand presence</p>
+                </div>
+                <div class="hero-card">
+                    <h3>🎯 Paid Ads</h3>
+                    <p>ROI-focused campaigns that generate real leads</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services">
+        <div class="section-header">
+            <h2>All-in-one digital growth partner</h2>
+            <p>Everything you need to build, grow, and scale your business online</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>Web Development</h3>
+                <p>Beautiful, fast, and conversion-optimized websites that work perfectly on all devices. From landing pages to full e-commerce stores.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>App Development</h3>
+                <p>Custom Android and iOS apps that solve real problems for your customers. From concept to launch, we handle everything.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <h3>Social Media Marketing</h3>
+                <p>Strategic content creation and community management that builds your brand and engages your audience authentically.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Paid Ads & Branding</h3>
+                <p>Data-driven advertising campaigns and cohesive brand identity that makes you stand out and drives measurable results.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Services -->
+    <section class="detailed-services">
+        <div class="section-header">
+            <h2>What We Do</h2>
+            <p>Comprehensive digital solutions tailored to your business needs</p>
+        </div>
+
+        <div class="service-detail">
+            <h3>🌐 Web Development</h3>
+            <ul>
+                <li>Responsive business websites that look great on all devices</li>
+                <li>High-converting landing pages for campaigns</li>
+                <li>Portfolio and personal branding sites</li>
+                <li>E-commerce and product pages with secure payment integration</li>
+                <li>SEO-ready websites optimized for search engines</li>
+            </ul>
+            <div class="service-highlight">
+                We focus on speed, SEO, and conversions so your website actually brings business.
+            </div>
+        </div>
+
+        <div class="service-detail">
+            <h3>📱 App Development</h3>
+            <ul>
+                <li>Android & iOS apps (basic to mid-level complexity)</li>
+                <li>Business tools and productivity apps</li>
+                <li>Booking and appointment apps</li>
+                <li>Customer portals and dashboards</li>
+                <li>App store submission and launch support</li>
+            </ul>
+            <div class="service-highlight">
+                From idea to launch, we help you build apps that your customers love to use.
+            </div>
+        </div>
+
+        <div class="service-detail">
+            <h3>📊 Social Media Marketing</h3>
+            <ul>
+                <li>Instagram & Facebook growth strategies</li>
+                <li>Content calendar creation and management</li>
+                <li>Reels/Shorts strategy and posting</li>
+                <li>Community engagement and response management</li>
+                <li>Analytics and performance reporting</li>
+            </ul>
+            <div class="service-highlight">
+                We manage your social media so you can focus on running your business.
+            </div>
+        </div>
+
+        <div class="service-detail">
+            <h3>🤝 Influencer Marketing</h3>
+            <ul>
+                <li>Connect brands with relevant influencers</li>
+                <li>Campaign planning and execution</li>
+                <li>Influencer vetting and negotiation</li>
+                <li>Performance tracking and ROI analysis</li>
+            </ul>
+            <div class="service-highlight">
+                We help you collaborate with the right creators to reach the right audience.
+            </div>
+        </div>
+
+        <div class="service-detail">
+            <h3>🛒 Facebook / Amazon Listing & Optimization</h3>
+            <ul>
+                <li>Product listing creation and optimization</li>
+                <li>Professional product images and descriptions</li>
+                <li>SEO optimization for better visibility</li>
+                <li>Competitor analysis and pricing strategy</li>
+            </ul>
+            <div class="service-highlight">
+                We set up and optimize your product listings to get you more visibility and sales.
+            </div>
+        </div>
+
+        <div class="service-detail">
+            <h3>🎨 Branding & Creative</h3>
+            <ul>
+                <li>Logo design and brand identity development</li>
+                <li>Brand colors, fonts, and style guidelines</li>
+                <li>Social media kit (post templates, story templates)</li>
+                <li>Marketing collateral design</li>
+                <li>Brand strategy and positioning</li>
+            </ul>
+            <div class="service-highlight">
+                A clear, consistent brand makes you look professional and memorable.
+            </div>
+        </div>
+
+        <div class="service-detail">
+            <h3>🎯 Performance Ads (Google / Facebook)</h3>
+            <ul>
+                <li>Campaign setup and tracking</li>
+                <li>Lead generation campaigns</li>
+                <li>Remarketing and retargeting</li>
+                <li>A/B testing and optimization</li>
+                <li>Detailed analytics and reporting</li>
+            </ul>
+            <div class="service-highlight">
+                We don't just run ads; we focus on ROI, leads, and real results.
+            </div>
+        </div>
+
+        <div class="service-detail">
+            <h3>⚡ Additional Services</h3>
+            <ul>
+                <li>Landing page optimization for better conversions</li>
+                <li>Marketing automation and chatbots (WhatsApp / website)</li>
+                <li>E-commerce store setup (Shopify / WooCommerce)</li>
+                <li>Email marketing campaigns</li>
+                <li>Content writing and copywriting</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section>
+        <div class="section-header">
+            <h2>Why brands trust Digicell Agency</h2>
+            <p>We're more than just a service provider — we're your growth partner</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">🎯</div>
+                <div class="why-content">
+                    <h4>End-to-End Solutions</h4>
+                    <p>From website to marketing in one place. No need to juggle multiple agencies.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">💎</div>
+                <div class="why-content">
+                    <h4>Transparent Pricing</h4>
+                    <p>Simple, clear pricing with no hidden charges. You know exactly what you're paying for.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">❤️</div>
+                <div class="why-content">
+                    <h4>Your Success is Ours</h4>
+                    <p>We treat your business like our own and celebrate your wins as our wins.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">💬</div>
+                <div class="why-content">
+                    <h4>Dedicated Support</h4>
+                    <p>Direct access via WhatsApp and email. Quick responses, no ticket systems.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🚀</div>
+                <div class="why-content">
+                    <h4>Results-Driven</h4>
+                    <p>We focus on metrics that matter: leads, sales, and growth.</p>
+                </div>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🌍</div>
+                <div class="why-content">
+                    <h4>Global Reach</h4>
+                    <p>Based in India, working with clients worldwide. Time zones are never a problem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" style="background: var(--gray);">
+        <div class="section-header">
+            <h2>How we work</h2>
+            <p>A simple, proven process that delivers results</p>
+        </div>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h4>Discovery Call</h4>
+                <p>We understand your goals, target audience, and budget. This helps us create the perfect strategy for you.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h4>Strategy</h4>
+                <p>We create a custom plan for your website, app, and marketing campaigns tailored to your business.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h4>Execution</h4>
+                <p>We design, develop, and launch your projects with attention to every detail.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h4>Growth</h4>
+                <p>We track results, optimize performance, and keep improving every month.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+        <div class="section-header">
+            <h2>Recent Projects</h2>
+            <p>Real results for real businesses</p>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-card">
+                <div class="portfolio-image">🏋️</div>
+                <div class="portfolio-content">
+                    <h4>Local Gym Website</h4>
+                    <p>Complete website redesign with online booking system and membership management for a growing fitness center.</p>
+                    <div class="portfolio-result">📈 +45% membership signups in 3 months</div>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">📚</div>
+                <div class="portfolio-content">
+                    <h4>Coaching Institute Landing Page</h4>
+                    <p>High-converting landing page with lead capture forms and WhatsApp integration for a competitive exam coaching center.</p>
+                    <div class="portfolio-result">📈 +35% leads in 2 months</div>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">💇</div>
+                <div class="portfolio-content">
+                    <h4>Instagram Growth for Salon</h4>
+                    <p>Complete social media management including content creation, posting schedule, and engagement strategy.</p>
+                    <div class="portfolio-result">📈 2.5K to 12K followers in 4 months</div>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">🍕</div>
+                <div class="portfolio-content">
+                    <h4>Restaurant App Development</h4>
+                    <p>Custom mobile app for online ordering, table booking, and loyalty rewards program.</p>
+                    <div class="portfolio-result">📈 +60% online orders within 2 months</div>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">👗</div>
+                <div class="portfolio-content">
+                    <h4>E-commerce Store for Fashion Brand</h4>
+                    <p>Complete Shopify store setup with product photography, descriptions, and Facebook ads campaign.</p>
+                    <div class="portfolio-result">📈 ₹2.5L revenue in first month</div>
+                </div>
+            </div>
+            <div class="portfolio-card">
+                <div class="portfolio-image">🎓</div>
+                <div class="portfolio-content">
+                    <h4>Personal Brand Website for Coach</h4>
+                    <p>Professional portfolio website with blog, course listings, and email capture for a life coach.</p>
+                    <div class="portfolio-result">📈 +80% consultation bookings</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" style="background: var(--gray);">
+        <div class="section-header">
+            <h2>Simple, Transparent Pricing</h2>
+            <p>Choose the plan that fits your business stage</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <span class="pricing-badge">For New Businesses</span>
+                <h3>Starter</h3>
+                <p>Perfect for businesses just getting started online</p>
+                <ul>
+                    <li>1-page website or landing page</li>
+                    <li>Basic branding (logo + colors)</li>
+                    <li>Social media setup</li>
+                    <li>Mobile responsive design</li>
+                    <li>SEO basics</li>
+                    <li>1 month support</li>
+                </ul>
+                <button class="pricing-btn">Get Started</button>
+            </div>
+            <div class="pricing-card featured">
+                <span class="pricing-badge">⭐ Most Popular</span>
+                <h3>Growth</h3>
+                <p>For businesses ready to scale their online presence</p>
+                <ul>
+                    <li>Multi-page website</li>
+                    <li>Complete branding package</li>
+                    <li>Ongoing social media posting (12 posts/month)</li>
+                    <li>Basic ads management</li>
+                    <li>WhatsApp chatbot integration</li>
+                    <li>3 months support</li>
+                    <li>Monthly analytics reports</li>
+                </ul>
+                <button class="pricing-btn">Get Started</button>
+            </div>
+            <div class="pricing-card">
+                <span class="pricing-badge">For Serious Growth</span>
+                <h3>Scale</h3>
+                <p>Complete digital transformation for ambitious businesses</p>
+                <ul>
+                    <li>Custom website or mobile app</li>
+                    <li>Advanced marketing campaigns</li>
+                    <li>Daily social media management</li>
+                    <li>Performance ads (Google + Facebook)</li>
+                    <li>Influencer collaborations</li>
+                    <li>Priority support</li>
+                    <li>Dedicated account manager</li>
+                </ul>
+                <button class="pricing-btn">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header">
+            <h2>What Our Clients Say</h2>
+            <p>Real feedback from real businesses</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">Digicell Agency helped us get more students for our coaching centre in just 6 weeks. The landing page they built converts really well!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RK</div>
+                    <div class="author-info">
+                        <h5>Rajesh Kumar</h5>
+                        <p>Coaching Institute Owner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">Our Instagram went from 2K to 12K followers in 4 months. The content they create is exactly what our audience loves. Highly recommend!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">PS</div>
+                    <div class="author-info">
+                        <h5>Priya Sharma</h5>
+                        <p>Salon Owner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">The mobile app they built for our restaurant has been a game changer. Online orders increased by 60% in just 2 months!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AM</div>
+                    <div class="author-info">
+                        <h5>Amit Mehta</h5>
+                        <p>Restaurant Owner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">Professional, responsive, and results-driven. They understood our brand vision and delivered exactly what we needed. Worth every rupee!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SK</div>
+                    <div class="author-info">
+                        <h5>Sneha Kapoor</h5>
+                        <p>Fashion Brand Founder</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How much do your services cost?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Our pricing varies based on your specific needs and project scope. We offer packages starting from basic landing pages to complete digital transformation solutions. Contact us for a custom quote tailored to your business goals and budget.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How long does it take to build a website?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>A simple landing page takes 1-2 weeks, while a multi-page business website typically takes 3-4 weeks. Custom web applications or e-commerce stores may take 6-8 weeks. Timeline depends on complexity and your feedback speed.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can you only handle marketing, not development?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! We offer standalone marketing services including social media management, paid ads, SEO, and content creation. You don't need to use our development services to work with us on marketing.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you work with clients outside India?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! While we're based in India, we work with clients globally. We're experienced in managing different time zones and have successfully delivered projects for clients in the US, UK, Australia, and Middle East.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do we start working together?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Simple! Book a free consultation call with us. We'll discuss your goals, challenges, and budget. Then we'll create a custom proposal. Once approved, we start with a discovery phase and kick off your project within days.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What if I'm not satisfied with the work?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>We offer unlimited revisions during the project phase to ensure you're 100% satisfied. We work closely with you throughout the process and make adjustments based on your feedback. Your satisfaction is our priority.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you provide ongoing support after project completion?</span>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! All our packages include post-launch support. We also offer monthly maintenance and support plans for ongoing updates, security, and optimization. We're here for the long term, not just the launch.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h2>Let's grow your business together</h2>
+        <p>Tell us about your business, and we'll share a free strategy tailored for you.</p>
+        <div class="cta-buttons">
+            <a href="#contact" class="btn-white">Get Free Strategy Call</a>
+            <a href="https://wa.me/919999999999" class="btn-white">WhatsApp Us</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header">
+            <h2>Let's Talk About Your Project</h2>
+            <p>Ready to take your business to the next level?</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>We'd love to hear about your business and discuss how we can help you grow. Fill out the form or reach out directly via email or phone.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h5>Email</h5>
+                            <p>hello@digicellagency.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <h5>Phone</h5>
+                            <p>+91 99999 99999</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h5>Location</h5>
+                            <p>Mumbai, India</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">💼</a>
+                    <a href="#" class="social-link">🐦</a>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label>Your Name *</label>
+                    <input type="text" name="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Business Name</label>
+                    <input type="text" name="business" placeholder="Your Business Name">
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" name="email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Phone *</label>
+                    <input type="tel" name="phone" required placeholder="+91 99999 99999">
+                </div>
+                <div class="form-group">
+                    <label>Service Interested In *</label>
+                    <select name="service" required>
+                        <option value="">Select a service</option>
+                        <option value="web">Web Development</option>
+                        <option value="app">App Development</option>
+                        <option value="social">Social Media Marketing</option>
+                        <option value="ads">Paid Advertising</option>
+                        <option value="branding">Branding & Design</option>
+                        <option value="all">Complete Package</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Budget Range</label>
+                    <select name="budget">
+                        <option value="">Select budget range</option>
+                        <option value="small">Under ₹50,000</option>
+                        <option value="medium">₹50,000 - ₹1,50,000</option>
+                        <option value="large">₹1,50,000 - ₹3,00,000</option>
+                        <option value="enterprise">Above ₹3,00,000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tell us about your project</label>
+                    <textarea name="message" placeholder="Share your goals, challenges, and what you're looking to achieve..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Digicell Agency</h3>
+                <p>We build brands, boost sales, and grow your digital presence. Your trusted partner for complete digital transformation.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Digicell Agency. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+            e.target.reset();
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.service-card, .why-card, .portfolio-card, .pricing-card, .testimonial-card, .process-step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
